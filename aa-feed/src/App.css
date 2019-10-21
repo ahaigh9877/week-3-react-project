@@ -1,0 +1,62 @@
+body {
+  outline: none;
+  font-size: 20px;
+  text-decoration: none;
+  background-color: dodgerblue;
+  text-align: center;
+  color: aliceblue;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+}
+
+.wrapper {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+section {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  margin: 20px auto;
+  width: 70%;
+  border: 3px solid darkblue;
+}
+
+.articleImg {
+  width: 25%;
+  /* height: 25%; */
+  border: 2px solid darkblue;
+  border-radius: 50%;
+}
+
+.articleWrapper {
+  width: 60%;
+  border: 2px solid darkblue;
+  border-radius: 10px;
+}
+
+h3 {
+}
+
+header,
+footer {
+  padding: 30px;
+  display: flex;
+  width: 1200px;
+  justify-content: space-around;
+}
+
+.logoImg {
+  width: 100px;
+  border: 1px solid red;
+}
+
+span {
+  font-size: 30px;
+  color: darkred;
+}
