@@ -13,6 +13,12 @@ export default class Content extends React.Component {
         <Article headline="" copy=""></Article>
         <Article headline="" copy=""></Article>
         <Article headline="" copy=""></Article>
+        <Article headline="" copy=""></Article>
+        <Article headline="" copy=""></Article>
+        <Article headline="" copy=""></Article>
+        <Article headline="" copy=""></Article>
+        <Article headline="" copy=""></Article>
+        <Article headline="" copy=""></Article>
       </main>
     );
   }

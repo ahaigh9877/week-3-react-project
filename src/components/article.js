@@ -4,10 +4,14 @@ export default class Article extends React.Component {
   render() {
     return (
       <section>
-        <img className="articleImg"></img>
+        <img
+          className="articleImg"
+          alt="article-img"
+          src={this.props.imageUrl}
+        />
         <div className="articleWrapper">
-          <h3>{this.props.headline}</h3>
-          <article>{this.props.copy}</article>
+          <h3>{this.props.name}</h3>
+          <article>{this.props.description}</article>
         </div>
       </section>
     );
