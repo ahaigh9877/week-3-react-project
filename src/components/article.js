@@ -31,6 +31,7 @@ export default class Article extends React.Component {
   render() {
     console.log("this.state.beerList", this.state.beerList);
     return (
+
       <ul className="beer-list">
         {this.state.beerList === null && "Loading..."}
         {this.state.beerList !== null &&
@@ -44,6 +45,7 @@ export default class Article extends React.Component {
             );
           })}
       </ul>
+
     );
   }
 }

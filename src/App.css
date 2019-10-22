@@ -18,6 +18,10 @@ a {
   width: 1200px;
 }
 
+main {
+  position: relative;
+}
+
 section {
   display: flex;
   justify-content: space-around;
@@ -49,6 +53,13 @@ footer {
   display: flex;
   width: 1200px;
   justify-content: space-around;
+}
+
+header {
+  position: fixed;
+  opacity: 1;
+  z-index: 10;
+  background-color: aquamarine;
 }
 
 .logoImg {
