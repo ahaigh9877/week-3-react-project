@@ -1,4 +1,5 @@
 body {
+  margin: -30px;
   outline: none;
   font-size: 20px;
   text-decoration: none;
@@ -20,9 +21,10 @@ a {
 
 main {
   position: relative;
+  padding-top: 60px;
 }
 
-section {
+li {
   display: flex;
   justify-content: space-around;
   padding: 15px;
@@ -32,10 +34,8 @@ section {
 }
 
 .articleImg {
-  width: 25%;
-  /* height: 25%; */
+  height: 250px;
   border: 2px solid darkblue;
-  border-radius: 50%;
 }
 
 .articleWrapper {
@@ -49,7 +49,7 @@ h3 {
 
 header,
 footer {
-  padding: 30px;
+  padding: 60px;
   display: flex;
   width: 1200px;
   justify-content: space-around;
@@ -59,7 +59,7 @@ header {
   position: fixed;
   opacity: 1;
   z-index: 10;
-  background-color: aquamarine;
+  background-color: dodgerblue;
 }
 
 .logoImg {
