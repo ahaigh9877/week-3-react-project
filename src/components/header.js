@@ -1,5 +1,5 @@
 import React from "react";
-import { logo } from "../images/brewdog-logo.png";
+import logo from "../brewdog-logo.png";
 
 export default class Header extends React.Component {
   render() {
