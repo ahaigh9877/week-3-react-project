@@ -52,24 +52,33 @@ export default class Article extends React.Component {
     this.setState({ beerList: updatedBeers });
   };
 
+  sortBeer = array => {
+    const array_copy = [...array];
+    return array_copy.sort((a, b) => b.numLikes - a.numLikes);
+  };
+
   render() {
     console.log("this.state.beerList", this.state.beerList);
+
     return (
       <ul className="beer-list">
         {this.state.beerList === null && "Loading..."}
         {this.state.beerList !== null &&
-          this.state.beerList.map(beer => {
+          this.sortBeer(this.state.beerList).map(beer => {
             return (
-              <BeerCard
-                key={beer.id}
-                id={beer.id}
-                name={beer.name}
-                description={beer.description}
-                image_url={beer.img}
-                numLikes={beer.numLikes}
-                incrementScore={this.incrementScoreOfBeer}
-                decrementScore={this.decrementScoreOfBeer}
-              />
+              console.log("this.state.beerList", this.state.beerList),
+              (
+                <BeerCard
+                  key={beer.id}
+                  id={beer.id}
+                  name={beer.name}
+                  description={beer.description}
+                  image_url={beer.img}
+                  numLikes={beer.numLikes}
+                  incrementScore={this.incrementScoreOfBeer}
+                  decrementScore={this.decrementScoreOfBeer}
+                />
+              )
             );
           })}
       </ul>
