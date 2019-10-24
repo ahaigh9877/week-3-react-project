@@ -44,7 +44,7 @@ export default class BeerCard extends React.Component {
         />
         <div className="articleWrapper">
           <h3>
-            <Link to={`/beer-page/${this.props.name}`}>{this.props.name}</Link>
+            <Link to={`/beer-page/${this.props.id}`}>{this.props.name}</Link>
           </h3>
 
           <div>
@@ -54,21 +54,7 @@ export default class BeerCard extends React.Component {
           </div>
 
           <article>{this.props.description}</article>
-          <form>
-            <textarea
-              type="text"
-              name="commentArea"
-              placeholder="what do you think of this beer?"
-              // Allows the input field to be changed.
-              onChange={this.handleChange}
-              value={this.state.name}
-            />
-            <input
-              type="submit"
-              value="Submit your comment"
-              onClick={this.handleSubmit}
-            />
-          </form>
+
           <article>{this.state.comments}</article>
         </div>
       </li>

@@ -8,11 +8,7 @@ function App() {
   return (
     <div className="wrapper">
       <Route exact path="/" component={MainContent} />
-      <Route
-        exact
-        path="/beer-page/:onebeer"
-        component={OneBeerPageContainer}
-      />
+      <Route exact path="/beer-page/:beerId" component={OneBeerPageContainer} />
     </div>
   );
 }
