@@ -1,10 +1,12 @@
 import React from "react";
 import BeerCard from "./BeerCard";
+
 export default class Article extends React.Component {
   state = {
     beerList: null,
     filteredBeer: null
   };
+
   componentDidMount() {
     fetch("https://api.punkapi.com/v2/beers")
       .then(res => res.json())
@@ -23,19 +25,21 @@ export default class Article extends React.Component {
       })
       .catch(console.error);
   }
+
   updateBeers(value) {
     this.setState({
       beerList: value
     });
   }
+
   filterBeers(value) {
     this.setState({
       filteredBeer: value
     });
   }
+
   handleSearch = evt => {
     console.log("event", evt.target.value);
-    console.log("filtered beerlist: ", this.state.filterBeers);
     const searchQuery = evt.target.value.toLowerCase();
     const filteredBeers = this.state.beerList.filter(el => {
       const searchName = el.name.toLowerCase();
@@ -45,61 +49,63 @@ export default class Article extends React.Component {
         searchDescr.indexOf(searchQuery) !== -1
       );
     });
-    console.log("filtered beers: ", filteredBeers);
     return this.filterBeers(filteredBeers);
   };
+
   incrementScoreOfBeer = id => {
-    const updatedBeers = this.state.filteredBeer.map(beer => {
+    const updatedBeers = this.state.beerList.map(beer => {
       if (beer.id === id) {
         return { ...beer, numLikes: beer.numLikes + 1 };
       } else {
         return beer;
       }
     });
-    this.setState({ filteredBeer: updatedBeers });
+    this.setState({ beerList: updatedBeers });
   };
 
   decrementScoreOfBeer = id => {
-    const updatedBeers = this.state.filteredBeer.map(beer => {
+    const updatedBeers = this.state.beerList.map(beer => {
       if (beer.id === id) {
         return { ...beer, numLikes: beer.numLikes - 1 };
       } else {
         return beer;
       }
     });
-    this.setState({ filteredBeer: updatedBeers });
+    this.setState({ beerList: updatedBeers });
   };
 
+  // Tried do do this inside render but it didn't work (maybe cos JSX) so it's a function here instead.
   sortBeer = array => {
     const array_copy = [...array];
     return array_copy.sort((a, b) => b.numLikes - a.numLikes);
   };
 
   render() {
-    console.log("this.state.beerList", this.state.beerList);
-
     return (
       <div>
         <input
           type="text"
-          className="search-field"
+          className="serch-field"
           onChange={this.handleSearch}
         />
         <ul className="beer-list">
           {this.state.filteredBeer === null && "Loading..."}
           {this.state.filteredBeer !== null &&
-            this.sortBeer(this.state.filteredBeer).map(beer => {
+            this.state.filteredBeer.map(beer => {
               return (
-                <BeerCard
-                  key={beer.id}
-                  id={beer.id}
-                  name={beer.name}
-                  description={beer.description}
-                  image_url={beer.img}
-                  numLikes={beer.numLikes}
-                  incrementScore={this.incrementScoreOfBeer}
-                  decrementScore={this.decrementScoreOfBeer}
-                />
+                console.log("this.state.beerList", this.state.beerList),
+                (
+                  <BeerCard
+                    key={beer.id}
+                    id={beer.id}
+                    name={beer.name}
+                    description={beer.description}
+                    image_url={beer.img}
+                    numLikes={beer.numLikes}
+                    incrementScore={this.incrementScoreOfBeer}
+                    decrementScore={this.decrementScoreOfBeer}
+                  />
+                )
               );
             })}
         </ul>

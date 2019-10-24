@@ -43,13 +43,11 @@ export default class BeerCard extends React.Component {
           src={this.props.image_url}
         />
         <div className="articleWrapper">
-
           <h3>
             <Link to={`/beer-page/${this.props.name}`}>{this.props.name}</Link>
           </h3>
 
           <div>
-            <h3>{this.props.name}</h3>
             <button onClick={this.handlePlusClick}>+</button>
             <span>Likes: {this.props.numLikes}</span>
             <button onClick={this.handleMinusClick}>-</button>
@@ -57,13 +55,6 @@ export default class BeerCard extends React.Component {
 
           <article>{this.props.description}</article>
           <form>
-            {/* <textarea
-              type="text"
-              name="commentField"
-              placeholder="what do you think of this beer?"
-              onChange={this.handleChange}
-              value=""
-            /> */}
             <textarea
               type="text"
               name="commentArea"

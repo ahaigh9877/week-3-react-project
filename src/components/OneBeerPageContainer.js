@@ -1,8 +1,24 @@
 import React from "react";
-import Header from "./header";
-import Footer from "./footer";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default class OneBeerPageContainer extends React.Component {
+  state = {
+    selectedBeer: null
+  };
+
+  componentDidMount() {
+    fetch("https://api.punkapi.com/v2/beers")
+      .then(res => res.json())
+      .then(data => {
+        const selectedBeer = data.find(item => item.id === "id");
+        this.setState({
+          selectedBeer: selectedBeer
+        });
+      })
+      .catch(console.error);
+  }
+
   render() {
     return (
       <div>

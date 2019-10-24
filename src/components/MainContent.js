@@ -1,7 +1,7 @@
 import React from "react";
-import Article from "./article";
-import Header from "./header";
-import Footer from "./footer";
+import Article from "./Article";
+import Header from "./Header";
+import Footer from "./Footer";
 
 export default class Content extends React.Component {
   render() {
