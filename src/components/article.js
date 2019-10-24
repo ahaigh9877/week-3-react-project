@@ -3,7 +3,8 @@ import BeerCard from "./BeerCard";
 
 export default class Article extends React.Component {
   state = {
-    beerList: null
+    beerList: null,
+    filteredBeer: null
   };
 
   componentDidMount() {
@@ -18,6 +19,7 @@ export default class Article extends React.Component {
           };
         });
         this.updateBeers(beerData);
+        this.filterBeers(beerData);
       })
       .catch(console.error);
   }
@@ -28,6 +30,12 @@ export default class Article extends React.Component {
     });
   }
 
+  filterBeers(value) {
+    this.setState({
+      filteredBeer: value
+    });
+  }
+
   handleSearch = evt => {
     console.log("event", evt.target.value);
     const searchQuery = evt.target.value.toLowerCase();
@@ -35,7 +43,7 @@ export default class Article extends React.Component {
       const searchValue = el.name.toLowerCase();
       return searchValue.indexOf(searchQuery) !== -1;
     });
-    return this.updateBeers(filteredBeers);
+    return this.filterBeers(filteredBeers);
   };
 
   render() {
@@ -48,9 +56,9 @@ export default class Article extends React.Component {
           onChange={this.handleSearch}
         />
         <ul className="beer-list">
-          {this.state.beerList === null && "Loading..."}
-          {this.state.beerList !== null &&
-            this.state.beerList.map(beer => {
+          {this.state.filteredBeer === null && "Loading..."}
+          {this.state.filteredBeer !== null &&
+            this.state.filteredBeer.map(beer => {
               return (
                 <BeerCard
                   name={beer.name}
