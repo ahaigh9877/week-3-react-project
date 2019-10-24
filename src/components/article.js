@@ -43,8 +43,12 @@ export default class Article extends React.Component {
     console.log("event", evt.target.value);
     const searchQuery = evt.target.value.toLowerCase();
     const filteredBeers = this.state.beerList.filter(el => {
-      const searchValue = el.name.toLowerCase();
-      return searchValue.indexOf(searchQuery) !== -1;
+      const searchName = el.name.toLowerCase();
+      const searchDescr = el.description.toLowerCase();
+      return (
+        searchName.indexOf(searchQuery) !== -1 ||
+        searchDescr.indexOf(searchQuery) !== -1
+      );
     });
     return this.filterBeers(filteredBeers);
 
