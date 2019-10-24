@@ -52,6 +52,7 @@ export default class Article extends React.Component {
     this.setState({ beerList: updatedBeers });
   };
 
+  // Tried do do this inside render but it didn't work (maybe cos JSX) so it's a function here instead.
   sortBeer = array => {
     const array_copy = [...array];
     return array_copy.sort((a, b) => b.numLikes - a.numLikes);
