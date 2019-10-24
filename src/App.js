@@ -7,12 +7,12 @@ import OneBeerPageContainer from "./components/OneBeerPageContainer";
 function App() {
   return (
     <div className="wrapper">
+
       <Route exact path="/" component={MainContent} />
       <Route
         exact
         path="/beer-page/:onebeer"
         component={OneBeerPageContainer}
-      />
     </div>
   );
 }
