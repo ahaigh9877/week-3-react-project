@@ -1,5 +1,5 @@
 import React from "react";
-import Article from "./article";
+import Article from "./Article";
 
 export default class Content extends React.Component {
   render() {

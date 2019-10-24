@@ -2,8 +2,9 @@ import React from "react";
 
 export default class BeerCard extends React.Component {
   state = {
-    comment: "",
-    comments: []
+    //comment: "",
+    // this should be an array of objects with (at least) comment and id properties.
+    comments: [{}]
   };
 
   handlePlusClick = () => {
@@ -77,3 +78,8 @@ export default class BeerCard extends React.Component {
     );
   }
 }
+
+// Should the comment be another component?
+// but comments list should be in the state of this component and passed down as props.
+// Form as another component?
+// Use <label> on form
