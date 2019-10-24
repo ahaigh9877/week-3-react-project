@@ -1,16 +1,18 @@
 import React from "react";
-
+import { Route } from "react-router-dom";
 import "./App.css";
-import Header from "./components/header";
-import Footer from "./components/footer";
-import Content from "./components/content";
+import MainContent from "./components/MainContent";
+import OneBeerPageContainer from "./components/OneBeerPageContainer";
 
 function App() {
   return (
     <div className="wrapper">
-      <Header></Header>
-      <Content></Content>
-      <Footer></Footer>
+      <Route exact path="/" component={MainContent} />
+      <Route
+        exact
+        path="/beer-page/:onebeer"
+        component={OneBeerPageContainer}
+      />
     </div>
   );
 }
