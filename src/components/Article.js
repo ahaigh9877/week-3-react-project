@@ -35,8 +35,6 @@ export default class Article extends React.Component {
     });
   }
   handleSearch = evt => {
-    console.log("event", evt.target.value);
-    console.log("filtered beerlist: ", this.state.filterBeers);
     const searchQuery = evt.target.value.toLowerCase();
     const filteredBeers = this.state.beerList.filter(el => {
       const searchName = el.name.toLowerCase();
@@ -46,7 +44,6 @@ export default class Article extends React.Component {
         searchDescr.indexOf(searchQuery) !== -1
       );
     });
-    console.log("filtered beers: ", filteredBeers);
     return this.filterBeers(filteredBeers);
   };
   incrementScoreOfBeer = id => {
@@ -77,8 +74,6 @@ export default class Article extends React.Component {
   };
 
   render() {
-    console.log("this.state.beerList", this.state.beerList);
-
     return (
       <div>
         <p className="textBySearch">Start typing to refine the list...</p>

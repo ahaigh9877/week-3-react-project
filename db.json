@@ -1,16 +1,14 @@
 {
   "comments": [
     {
-      "id": 1,
-      "commenter": "Alastair",
-      "content": "Cool beer",
-      "postId": 2
+      "author": "Alastair",
+      "text": "Cool beer",
+      "id": 1
     },
     {
-      "id": 2,
-      "commenter": "Sasha",
-      "content": "I like it",
-      "postId": 2
+      "author": "Sasha",
+      "text": "I like it",
+      "id": 2
     }
   ]
 }

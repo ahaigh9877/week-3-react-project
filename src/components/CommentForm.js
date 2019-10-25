@@ -15,13 +15,6 @@ class CommentForm extends Component {
   }
 
   addComment = (author, text) => {
-    // const id = Math.round(Math.random() * 100000000);
-    // const comments = [
-    //   ...this.state.comments,
-    //   { id: id, author: author, text: text }
-    // ];
-    // this.setState({ comments: comments });
-
     const newPost = { author: author, text: text };
 
     fetch("http://localhost:4000/comments", {
@@ -45,7 +38,6 @@ class CommentForm extends Component {
   handleSubmit = event => {
     event.preventDefault();
     this.addComment(this.state.author, this.state.onecomment);
-    console.log("SUBMITTING", this.state);
     this.setState({ [event.target.name]: "" });
   };
 
@@ -55,6 +47,7 @@ class CommentForm extends Component {
         <div>
           <h4>Comments</h4>
           {this.state.comments.map(comment => {
+            console.log("comment", comment);
             return (
               <Comment
                 key={comment.id}
