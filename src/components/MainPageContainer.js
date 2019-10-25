@@ -1,7 +1,7 @@
 import React from "react";
 import BeerCard from "./BeerCard";
 
-export default class Article extends React.Component {
+export default class MainPageContainer extends React.Component {
   state = {
     beerList: null,
     filteredBeer: null
