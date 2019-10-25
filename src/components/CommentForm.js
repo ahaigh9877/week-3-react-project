@@ -8,9 +8,8 @@ class CommentForm extends Component {
           type="text"
           name="commentArea"
           placeholder="what do you think of this beer?"
-          // Allows the input field to be changed.
           onChange={this.handleChange}
-          value={this.state.name}
+          value={this.comment}
         />
         <input
           type="submit"

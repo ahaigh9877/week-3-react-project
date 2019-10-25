@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import upVote from "../upArrowBeer.png";
+import downVote from "../downArrowBeer.png";
 
 export default class BeerCard extends React.Component {
   state = {
@@ -16,27 +18,9 @@ export default class BeerCard extends React.Component {
     return this.props.decrementScore(this.props.id);
   };
 
-  handleSubmit = event => {
-    event.preventDefault();
-    this.setState({
-      comments: [...this.state.comments, this.state.comment],
-      comment: ""
-    });
-    console.log("comments array: ", this.state);
-    //this.setState({ comment: "" });
-    //this.setState(this.state.comment);
-  };
-
-  handleChange = event => {
-    //this.setState({ comment: event.target.value });
-    this.setState({ comment: event.target.value });
-    console.log("this.state.comment:, this.state.comment");
-    console.log("comments array: ", this.state);
-  };
-
   render() {
     return (
-      <li>
+      <li className="beerListItem">
         <img
           className="articleImg"
           alt="article-img"
@@ -48,14 +32,16 @@ export default class BeerCard extends React.Component {
           </h3>
 
           <div>
-            <button onClick={this.handlePlusClick}>+</button>
+            <button onClick={this.handlePlusClick}>
+              <img src={upVote} className="upVote"></img>
+            </button>
             <span>Likes: {this.props.numLikes}</span>
-            <button onClick={this.handleMinusClick}>-</button>
+            <button onClick={this.handleMinusClick}>
+              <img src={downVote} className="downVote"></img>
+            </button>
           </div>
 
           <article>{this.props.description}</article>
-
-          <article>{this.state.comments}</article>
         </div>
       </li>
     );

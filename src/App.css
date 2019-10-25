@@ -28,7 +28,19 @@ main {
   padding-top: 60px;
 }
 
-li {
+ul {
+  list-style: none;
+  margin: 0 auto;
+  padding: 0 0 20px 0;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  max-height: 10px;
+}
+
+.beerListItem {
   display: flex;
   justify-content: space-between;
   padding: 15px;
@@ -40,6 +52,14 @@ li {
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
+.foodList {
+  background-color: #6bb6ff;
+  margin: 10px auto;
+  padding: 5px;
+  width: 90%;
+  border-radius: 5px;
+}
+
 .articleImg {
   margin-top: 15px;
   margin-left: 30px;
@@ -47,11 +67,34 @@ li {
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
+.oneBeerImg {
+  object-fit: contain;
+  width: 140px;
+  margin: 0 auto;
+}
+
 .articleWrapper {
   width: 75%;
   background-color: #51a9ff;
 
   border-radius: 10px;
+}
+
+.oneBeerBackground {
+  background-color: blueviolet;
+}
+
+.oneBeerWrapper {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  margin: 50px auto;
+  /* width: 80%; */
+  min-width: 500px;
+  border: 3px solid darkblue;
+  background-color: dodgerblue;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 article {
@@ -64,6 +107,10 @@ h1 {
   font-family: "Bangers";
   font-size: 70px;
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
+}
+
+.oneBeerHead {
+  font-size: 40px;
 }
 
 h3 {

@@ -2,11 +2,13 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import CommentForm from "./CommentForm";
-import BeerCard from "./BeerCard";
+import OnePageBeerCard from "./OnePageBeerCard";
 
 export default class OneBeerPageContainer extends React.Component {
   state = {
-    selectedBeer: null
+    selectedBeer: null,
+    comment: "",
+    comments: []
   };
 
   componentDidMount() {
@@ -18,45 +20,58 @@ export default class OneBeerPageContainer extends React.Component {
         this.setState({
           selectedBeer: data[0]
         });
-        console.log(this.state.selectedBeer);
       })
       .catch(console.error);
   }
 
+  handleSubmit = event => {
+    event.preventDefault();
+    console.log("HANDLE SUBMIT");
+    this.setState({
+      comments: [...this.state.comments, this.state.comment],
+      comment: ""
+    });
+
+    //this.setState({ comment: "" });
+    //this.setState(this.state.comment);
+  };
+
+  handleChange = event => {
+    console.log("EVENT: ", event);
+    this.setState({ comment: event.target.value });
+    console.log("comments array: ", this.state);
+  };
+
   render() {
     if (this.state.selectedBeer) {
-      console.log("this.state in render: ", this.state.selectedBeer);
+      console.log("this.state in render: ", this.state);
     }
     return (
       <div>
         {/* <Header></Header> */}
-        <main>
-          <div>
-            {/* <li>
-              <img
-                className="articleImg"
-                alt="article-img"
-                src={this.props.image_url}
-              />
-              <div className="articleWrapper">
-                <h3>NAME GOES HERE{this.props.name} </h3>
-                <article>{this.props.description}</article>
-              </div>
-            </li> */}
-            {this.state.selectedBeer === null && "Loading..."}
-            {this.state.selectedBeer !== null && (
-              <BeerCard
-                key={this.state.selectedBeer.id}
-                id={this.state.selectedBeer.id}
-                name={this.state.selectedBeer.name}
-                description={this.state.selectedBeer.description}
-                image_url={this.state.selectedBeer.img}
-              />
-            )}
-            )}
-          </div>
-          {/* <CommentForm /> */}
-        </main>
+        {/* <main> */}
+        {/* <div className="oneBeerBackground"> */}
+        {this.state.selectedBeer === null && "Loading..."}
+        {this.state.selectedBeer !== null && (
+          <OnePageBeerCard
+            key={this.state.selectedBeer.id}
+            id={this.state.selectedBeer.id}
+            name={this.state.selectedBeer.name}
+            abv={this.state.selectedBeer.abv}
+            description={this.state.selectedBeer.description}
+            food_pairing={this.state.selectedBeer.food_pairing}
+            image_url={this.state.selectedBeer.image_url}
+          />
+        )}
+        <CommentForm
+          handleSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          comment={this.state.comment}
+          extraprop="extraprop"
+        />
+        {this.state.comments}
+        {/* </div> */}
+        {/* </main> */}
         <Footer></Footer>
       </div>
     );
