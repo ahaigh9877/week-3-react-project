@@ -27,18 +27,21 @@ export default class BeerCard extends React.Component {
           src={this.props.image_url}
         />
         <div className="articleWrapper">
-          <h3>
-            <Link to={`/beer-page/${this.props.id}`}>{this.props.name}</Link>
-          </h3>
+          <div className="nameAndLikesWrapper">
+            <h3>
+              <Link to={`/beer-page/${this.props.id}`}>{this.props.name}</Link>
+            </h3>
+            <div className="likesWrapper">
+              <button onClick={this.handlePlusClick}>
+                <img src={upVote} className="voteImg"></img>
+              </button>
 
-          <div>
-            <button onClick={this.handlePlusClick}>
-              <img src={upVote} className="upVote"></img>
-            </button>
-            <span>Likes: {this.props.numLikes}</span>
-            <button onClick={this.handleMinusClick}>
-              <img src={downVote} className="downVote"></img>
-            </button>
+              <span className="likesText">Likes: {this.props.numLikes}</span>
+
+              <button onClick={this.handleMinusClick}>
+                <img src={downVote} className="voteImg"></img>
+              </button>
+            </div>
           </div>
 
           <article>{this.props.description}</article>
