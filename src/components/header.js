@@ -6,10 +6,18 @@ export default class Header extends React.Component {
     return (
       <header>
         <img className="logoImg" alt="logo" src={logo}></img>
-        <a href="#">About Us</a>
-        <a href="#">Support</a>
-        <a href="#">ITEM3</a>
-        <a href="#">Contact</a>
+        <a className="topLink" href="#">
+          About Us
+        </a>
+        <a className="topLink" href="#">
+          Support
+        </a>
+        <a className="topLink" href="#">
+          ITEM3
+        </a>
+        <a className="topLink" href="#">
+          Contact
+        </a>
       </header>
     );
   }

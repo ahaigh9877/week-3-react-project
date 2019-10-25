@@ -9,7 +9,10 @@ export default class Footer extends React.Component {
           <span> :&#123;</span>
           <span> &#x29;</span>
         </p>
-        <p>Alastair &#x214B; Aleksandra</p>
+        <p>
+          <a href="https://alastair-haigh.netlify.com/">Alastair</a> &#x214B;
+          <a href=""> Aleksandra</a>
+        </p>
       </footer>
     );
   }

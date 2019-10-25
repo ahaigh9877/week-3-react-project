@@ -9,8 +9,8 @@ export default class Content extends React.Component {
       <div>
         <Header></Header>
         <main>
-          <h1>BEER</h1>
-          <Article headline="" copy=""></Article>
+          <h1 className="ourBeers">OUR BEERS</h1>
+          <Article></Article>
         </main>
         <Footer></Footer>
       </div>
