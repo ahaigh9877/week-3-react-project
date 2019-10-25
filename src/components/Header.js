@@ -13,7 +13,7 @@ export default class Header extends React.Component {
           Support
         </a>
         <a className="topLink" href="#">
-          ITEM3
+          Links
         </a>
         <a className="topLink" href="#">
           Contact

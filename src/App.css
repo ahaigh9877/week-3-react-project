@@ -72,6 +72,12 @@ h3 {
   font-size: 30px;
   margin: 0 auto;
   width: 400px;
+  transition: 0.5s;
+}
+
+h3:hover {
+  transform: scale(1.2);
+  transition: 0.5s;
 }
 
 .oneBeerImg {
@@ -188,7 +194,7 @@ span {
 .inputFieldComment {
   margin-top: 30px;
   height: 40px;
-  width: 400px;
+  width: 300px;
   padding-left: 15px;
   padding-bottom: 3px;
   font-size: 20px;
@@ -197,6 +203,12 @@ span {
   border-radius: 40px;
   border: none;
   outline: none;
+  transition: 0.5s;
+}
+
+.inputFieldComment:focus {
+  width: 600px;
+  transition: 0.5s;
 }
 
 label {
@@ -223,11 +235,14 @@ label {
   border: none;
   outline: none;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
+  cursor: pointer;
 }
 
 .commentButton:hover {
   box-shadow: none;
   transform: translate(4px, 4px);
+  transition: 0.3s;
 }
 
 .authorComment {
