@@ -3,18 +3,39 @@ import Comment from "./Comment";
 
 class CommentForm extends Component {
   state = {
-    comments: [{ id: 1, author: "Sasha", text: "I like it!" }],
+    comments: [],
     onecomment: "",
     author: ""
   };
 
+  componentDidMount() {
+    fetch("http://localhost:4000/comments")
+      .then(response => response.json())
+      .then(comments => this.setState({ comments: comments }));
+  }
+
   addComment = (author, text) => {
-    const id = Math.round(Math.random() * 100000000);
-    const comments = [
-      ...this.state.comments,
-      { id: id, author: author, text: text }
-    ];
-    this.setState({ comments: comments });
+    // const id = Math.round(Math.random() * 100000000);
+    // const comments = [
+    //   ...this.state.comments,
+    //   { id: id, author: author, text: text }
+    // ];
+    // this.setState({ comments: comments });
+
+    const newPost = { author: author, text: text };
+
+    fetch("http://localhost:4000/comments", {
+      method: "POST",
+      body: JSON.stringify(newPost),
+      headers: {
+        "Content-Type": "application/json"
+      }
+    })
+      .then(response => response.json())
+      .then(comment => {
+        const comments = [...this.state.comments, comment];
+        this.setState({ comments: comments });
+      });
   };
 
   handleChange = event => {
