@@ -1,6 +1,5 @@
 import React from "react";
 import BeerCard from "./BeerCard";
-import searchIcon from "../bottle-mag.png";
 
 export default class Article extends React.Component {
   state = {
