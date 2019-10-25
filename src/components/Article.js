@@ -1,5 +1,6 @@
 import React from "react";
 import BeerCard from "./BeerCard";
+
 export default class Article extends React.Component {
   state = {
     beerList: null,
@@ -80,10 +81,12 @@ export default class Article extends React.Component {
 
     return (
       <div>
+        <p className="textBySearch">Start typing to refine the list...</p>
         <input
           type="text"
-          className="search-field"
+          className="searchField"
           onChange={this.handleSearch}
+          alt="magnifying-glass"
         />
         <ul className="beer-list">
           {this.state.filteredBeer === null && "Loading..."}
