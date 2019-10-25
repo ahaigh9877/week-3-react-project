@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import upVote from "../upArrowBeer.png";
-import downVote from "../downArrowBeer.png";
+import upVote from "./upArrowBeer.png";
+import downVote from "./downArrowBeer.png";
+import "./BeerCard.css";
 
 export default class BeerCard extends React.Component {
   state = {

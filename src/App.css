@@ -37,29 +37,6 @@ main {
   text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.3);
 }
 
-.textBySearch {
-  margin-bottom: 0;
-  font-size: 23px;
-}
-
-.searchField {
-  height: 40px;
-  width: 200px;
-  padding-left: 45px;
-  padding-bottom: 3px;
-  font-size: 20px;
-  color: dodgerblue;
-  background-image: url(./bottle-mag.png);
-  background-position: 10px 9px;
-  background-repeat: no-repeat;
-  background-size: 25px;
-  background-color: aliceblue;
-  border-radius: 40px;
-  border: none;
-  outline: none;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
 ul {
   list-style: none;
   margin: 0 auto;
@@ -82,34 +59,12 @@ button {
   transition: 0.5s;
 }
 
-.likesText {
-  font-family: "Bangers";
-}
-
-.beerListItem {
-  display: flex;
-  justify-content: space-between;
-  padding: 15px;
-  margin: 20px auto;
-  width: 70%;
-  border: 3px solid darkblue;
-  background-color: dodgerblue;
-  border-radius: 20px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
-}
-
 .foodList {
   background-color: #6bb6ff;
   margin: 10px auto;
   padding: 5px;
   width: 90%;
   border-radius: 5px;
-}
-
-.articleImg {
-  margin: 5px 0 5px 40px;
-  height: 250px;
-  filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
 
 h3 {
@@ -119,24 +74,10 @@ h3 {
   width: 400px;
 }
 
-.nameAndLikesWrapper {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 20px;
-}
-
 .oneBeerImg {
   object-fit: contain;
   width: 140px;
   margin: 0 auto;
-}
-
-.articleWrapper {
-  width: 75%;
-  background-color: #51a9ff;
-
-  border-radius: 10px;
 }
 
 .oneBeerBackground {
@@ -147,13 +88,14 @@ h3 {
   display: flex;
   justify-content: space-between;
   padding: 15px;
-  margin: 50px auto;
+  margin: 50px 0px auto;
   /* width: 80%; */
   min-width: 500px;
   border: 3px solid darkblue;
   background-color: dodgerblue;
   border-radius: 20px;
   box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+  z-index: 5;
 }
 
 article {
@@ -212,4 +154,90 @@ footer {
 span {
   font-size: 30px;
   color: darkred;
+}
+
+.commentsTitle {
+  font-size: 40px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.commentsAndFormWrapper {
+  background-color: #6bb6ff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 20px;
+  z-index: -50;
+}
+
+.inputFieldAuthor {
+  margin-top: 30px;
+  height: 40px;
+  width: 100px;
+  padding-left: 15px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  color: dodgerblue;
+  background-color: aliceblue;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+}
+
+.inputFieldComment {
+  margin-top: 30px;
+  height: 40px;
+  width: 400px;
+  padding-left: 15px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  color: dodgerblue;
+  background-color: aliceblue;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+}
+
+label {
+  padding-left: 20px;
+  padding-right: 15px;
+  padding-top: 5px;
+  font-size: 30px;
+}
+
+.oneComment {
+  display: inline;
+  font-size: 25px;
+}
+
+.commentButton {
+  margin-top: 35px;
+  height: 40px;
+  font-size: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  color: dodgerblue;
+  background-color: aliceblue;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.commentButton:hover {
+  box-shadow: none;
+  transform: translate(4px, 4px);
+}
+
+.authorComment {
+  margin-bottom: 0px;
+}
+
+.commentText {
+  margin-top: 10px;
+}
+
+form {
+  margin-bottom: 30px;
 }

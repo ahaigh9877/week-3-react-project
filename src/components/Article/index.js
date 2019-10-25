@@ -1,5 +1,7 @@
+//Article
+
 import React from "react";
-import BeerCard from "../BeerCard";
+import BeerCard from "../BeerCard/index";
 import "./Article.css";
 
 export default class Article extends React.Component {
@@ -84,7 +86,7 @@ export default class Article extends React.Component {
           onChange={this.handleSearch}
           alt="magnifying-glass"
         />
-        <ul className="beer-list">
+        <ul className="beerList">
           {this.state.filteredBeer === null && "Loading..."}
           {this.state.filteredBeer !== null &&
             this.sortBeer(this.state.filteredBeer).map(beer => {

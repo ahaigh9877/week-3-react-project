@@ -43,9 +43,9 @@ class CommentForm extends Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h4>Comments</h4>
+      <div className="commentsAndFormWrapper">
+        <div className="commentsWrapper">
+          <h4 className="commentsTitle">Comments</h4>
           {this.state.comments.map(comment => {
             console.log("comment", comment);
             return (
@@ -61,12 +61,14 @@ class CommentForm extends Component {
         <form onSubmit={this.handleSubmit}>
           <label>Author: </label>
           <input
+            className="inputFieldAuthor"
             name="author"
             value={this.state.author}
             onChange={this.handleChange}
           />
           <label>Comment: </label>
           <input
+            className="inputFieldComment"
             type="text"
             name="onecomment"
             placeholder="what do you think of this beer?"
@@ -75,6 +77,7 @@ class CommentForm extends Component {
           />
           <br></br>
           <input
+            className="commentButton"
             type="submit"
             value="Submit your comment"
             onClick={this.handleSubmit}

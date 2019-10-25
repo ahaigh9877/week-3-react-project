@@ -3,3 +3,26 @@
   height: 250px;
   filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.3));
 }
+
+.textBySearch {
+  margin-bottom: 0;
+  font-size: 23px;
+}
+
+.searchField {
+  height: 40px;
+  width: 200px;
+  padding-left: 45px;
+  padding-bottom: 3px;
+  font-size: 20px;
+  color: dodgerblue;
+  background-image: url(./bottle-mag.png);
+  background-position: 10px 9px;
+  background-repeat: no-repeat;
+  background-size: 25px;
+  background-color: aliceblue;
+  border-radius: 40px;
+  border: none;
+  outline: none;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}

@@ -3,9 +3,9 @@ import React, { Component } from "react";
 class Comment extends Component {
   render() {
     return (
-      <div>
-        <h4>{this.props.author}</h4>
-        <p>{this.props.content}</p>
+      <div className="oneComment">
+        <h4 className="authorComment">{this.props.author} says...</h4>
+        <p className="commentText">"{this.props.content}"</p>
       </div>
     );
   }
