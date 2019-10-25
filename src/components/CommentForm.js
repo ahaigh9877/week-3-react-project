@@ -59,20 +59,21 @@ class CommentForm extends Component {
           })}
         </div>
         <form onSubmit={this.handleSubmit}>
-          <label>Author</label>
+          <label>Author: </label>
           <input
             name="author"
             value={this.state.author}
             onChange={this.handleChange}
           />
-          <label>Comment</label>
-          <textarea
+          <label>Comment: </label>
+          <input
             type="text"
             name="onecomment"
             placeholder="what do you think of this beer?"
             onChange={this.handleChange}
             value={this.state.onecomment}
           />
+          <br></br>
           <input
             type="submit"
             value="Submit your comment"

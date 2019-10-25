@@ -1,5 +1,6 @@
 import React from "react";
-import BeerCard from "./BeerCard";
+import BeerCard from "../BeerCard";
+import "./Article.css";
 
 export default class Article extends React.Component {
   state = {
@@ -19,14 +20,14 @@ export default class Article extends React.Component {
             numLikes: Math.floor(Math.random() * 10)
           };
         });
-        this.updateBeers(beerData);
-        this.filterBeers(beerData);
+        this.setBeers(beerData);
       })
       .catch(console.error);
   }
-  updateBeers(value) {
+  setBeers(beers) {
     this.setState({
-      beerList: value
+      filteredBeer: beers,
+      beerList: beers
     });
   }
   filterBeers(value) {
@@ -36,9 +37,9 @@ export default class Article extends React.Component {
   }
   handleSearch = evt => {
     const searchQuery = evt.target.value.toLowerCase();
-    const filteredBeers = this.state.beerList.filter(el => {
-      const searchName = el.name.toLowerCase();
-      const searchDescr = el.description.toLowerCase();
+    const filteredBeers = this.state.beerList.filter(beer => {
+      const searchName = beer.name.toLowerCase();
+      const searchDescr = beer.description.toLowerCase();
       return (
         searchName.indexOf(searchQuery) !== -1 ||
         searchDescr.indexOf(searchQuery) !== -1

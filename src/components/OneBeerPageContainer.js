@@ -53,14 +53,18 @@ export default class OneBeerPageContainer extends React.Component {
         {/* <div className="oneBeerBackground"> */}
         {this.state.selectedBeer === null && "Loading..."}
         {this.state.selectedBeer !== null && (
+          // <OnePageBeerCard
+          //   key={this.state.selectedBeer.id}
+          //   id={this.state.selectedBeer.id}
+          //   name={this.state.selectedBeer.name}
+          //   abv={this.state.selectedBeer.abv}
+          //   description={this.state.selectedBeer.description}
+          //   food_pairing={this.state.selectedBeer.food_pairing}
+          //   image_url={this.state.selectedBeer.image_url}
+          // />
           <OnePageBeerCard
             key={this.state.selectedBeer.id}
-            id={this.state.selectedBeer.id}
-            name={this.state.selectedBeer.name}
-            abv={this.state.selectedBeer.abv}
-            description={this.state.selectedBeer.description}
-            food_pairing={this.state.selectedBeer.food_pairing}
-            image_url={this.state.selectedBeer.image_url}
+            {...this.state.selectedBeer}
           />
         )}
         <CommentForm
